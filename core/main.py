@@ -24,7 +24,7 @@ def getVersion(onlineYes):
 	        return config['about']['version']
 	else:
 		http = urllib3.PoolManager()
-		r = http.request('GET', 'https://keirranblackley.com/version.txt')
+		r = http.request('GET', 'https://keiblackley.github.io/version.txt')
 		data_string = r.data.decode('utf-8', errors='ignore')
 		tree = html.fromstring(data_string)
 		return str(tree.xpath('//version')[0].text)
