@@ -16,7 +16,7 @@ def checkUpdate():
         print("\n[ "+core.display.tred+"Info"+core.display.twhite+" ] Could not find online version.")
     
     # Gets VERSION from config.ini
-    if (os.path.isfile("core/cfg/about.ini")):
+    if (os.path.isfile("raspkei/core/cfg/about.ini")):
         config = configparser.ConfigParser()
         config.read("core/cfg/about.ini")
         localVersion = config['about']['version']
