@@ -4,8 +4,7 @@ def checkUpdate():
     try:
         # Gets <version>VERSION</version> from url
         http = urllib3.PoolManager()
-        r = http.request('GET', 'https://keiblackley.github
-io/version.txt')
+        r = http.request('GET', 'https://keiblackley.github.io/version.txt')
         data_string = r.data.decode('utf-8', errors='ignore')
         tree = html.fromstring(data_string)
         onlineVersion = str(tree.xpath('//version')[0].text)
