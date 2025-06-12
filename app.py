@@ -18,7 +18,7 @@ def checkUpdate():
     # Gets VERSION from config.ini
     if (os.path.isfile("raspkei/core/cfg/about.ini")):
         config = configparser.ConfigParser()
-        config.read("core/cfg/about.ini")
+        config.read("raspkei/core/cfg/about.ini")
         localVersion = config['about']['version']
         version = localVersion
         
