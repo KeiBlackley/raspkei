@@ -19,14 +19,14 @@
 
 body {
    font-family: "Lato", sans-serif;
-   background-color: var(--col-litewhite);
+   background-color: var(--col-white);
    color: var(--col-kei-blue);
 }
 
 h1, h2 { 
    font-family: "Quicksand", sans-serif; 
    text-transform: uppercase; 
-   margin: 16px auto; 
+   margin-bottom: 24px; 
 
    display: flex;
    align-items: center;
@@ -42,7 +42,7 @@ a:hover { color: var(--col-kei-cyan); transition: 0.5s; }
 
 form {
    width: 90%;
-   margin: 20px auto;
+   margin: 20px auto 0 auto;
 }
 
 input[type=text], select {

@@ -16,7 +16,11 @@ input[type=submit]:hover { background-color:var(--col-green); }
 
 .apportal {
    background-color: white;
-   padding: 8px 24px;
+   padding: 16px 24px;
    border-radius: 16px;
    width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .apportal { width: 90%; }
 }
