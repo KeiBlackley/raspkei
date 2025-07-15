@@ -1,19 +1,14 @@
-import subprocess, socket
-import core.main
-
-tred = "\033[31m"
-tgreen = "\033[32m"
-tyellow = "\033[33m"
-tblue = "\033[36m"
-twhite = "\033[37m"
+from termcolor import colored
+import subprocess, socket, os
 
 def printLogo():
-    print(tred+r""" ____                 _        _ 
+    os.system("cls")
+    print(colored(r""" ____                 _        _ 
 |  _ \ __ _ ___ _ __ | | _____(_)
 | |_) / _` / __| '_ \| |/ / _ \ |
 |  _ < (_| \__ \ |_) |   <  __/ |
 |_| \_\__,_|___/ .__/|_|\_\___|_|
-               |_|"""+twhite+"\n")
+               |_| Hotspot """, "red"))
 
 def printInfo():  
     print("\n[ "+tblue+"Info"+twhite+" ]")

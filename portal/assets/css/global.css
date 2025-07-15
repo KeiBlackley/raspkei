@@ -2,53 +2,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-  --col-rpi-red: #cd2355;
-  
   --col-kei-blue: #003454;
   --col-kei-liteblue: #6f9deb;
   --col-kei-cyan: #0c696e;
+  
   --col-white: #f8f2f3;
   --col-litewhite: #cedfd9;
-  --col-litegray: #ced4da;
+  
   --col-grey: #adb5bd;
+  --col-litegray: #ced4da;
   --col-darkgray: #495057;
+  
   --col-green: #00C950;
+  --col-liteblue: #dbeafe;
+
+  --bg-lite: #eee;
+  --bg-dark: #333;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
    font-family: "Lato", sans-serif;
-   background-color: var(--col-white);
+   background-color: var(--bg-lite);
    color: var(--col-kei-blue);
 }
 
-h1, h2 { 
+h1, h2, h3, h4 { 
    font-family: "Quicksand", sans-serif; 
    text-transform: uppercase; 
-   margin-bottom: 24px; 
-
-   display: flex;
-   align-items: center;
+   margin: 16px;
 }
 
 img { width: 50px; margin: 20px; }
 
 ul { list-style: none; }
-ul li { margin-left: 16px; }
+ul li { margin-left: 32px; }
 
 a, a:visited { color: var(--col-kei-liteblue); text-decoration: none; }
 a:hover { color: var(--col-kei-cyan); transition: 0.5s; }
 
 form {
-   width: 90%;
-   margin: 20px auto 0 auto;
+  overflow: auto;
+  width: 90%;
+  margin: 20px auto 0 auto;
 }
 
-input[type=text], select {
+input[type=text], 
+input[type=password],
+select {
   width: 100%;
   padding: 12px;
-  margin: 8px 0;
+  margin: 8px 0 20px;
   display: inline-block;
   border: 1px solid var(--col-grey);
   border-radius: 4px;
@@ -56,6 +61,9 @@ input[type=text], select {
 }
 
 label.checkbox {
+  width: 80%;
+  margin: auto;
+  text-align: right;
   display: block;
   position: relative;
   padding-left: 32px;
@@ -106,6 +114,15 @@ label.checkbox .checkmark:after {
   background: white;
 }
 
+input[type=submit] {
+  float: right;
+  background-color: var(--col-darkgray);
+  color: white;
+  border: none;
+
+}
+input[type=submit]:hover { background-color: var(--col-grey);  }
+
 input[type=submit],
 button {
    cursor: pointer;
@@ -113,31 +130,23 @@ button {
    letter-spacing: 1px;
    text-transform: uppercase;
    border-radius: 4px;
+   min-width: 40%;
    max-width: 200px;
    margin: 20px auto;
    padding: 12px 20px;
    transition: 0.4s;
 }
-
-input[type=submit] {
-  background-color: var(--col-darkgray);
-  color: white;
-  border: none;
-
-}
-input[type=submit]:hover { 
+input[type=submit]:hover,
+button:hover {
    transform: scale(0.95);
-   background-color: var(--col-grey); 
 }
 
 button {
    border: 0;
    background-color: var(--col-kei-liteblue);
    color: white;
-   transition: transform 80ms ease-in;
 }
 button:hover { background-color: var(--col-darkgray); }
-button:active { transform: scale(0.95); }
 button.alpha {
    background-color: transparent;
    border: 1px solid white;

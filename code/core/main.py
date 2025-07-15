@@ -1,7 +1,10 @@
+from termcolor import colored
 from datetime import datetime, timedelta
-from lxml import html
 import sys, time, os, configparser, urllib3
 import core.display
+
+def is_root():
+    return os.geteuid() == 0
 
 def start():
     print("\nWhich process do you want to start?")
@@ -29,17 +32,18 @@ def getVersion(onlineYes):
 		tree = html.fromstring(data_string)
 		return str(tree.xpath('//version')[0].text)
 		
-def askQuestionWithDefault(msg, default_yes = False):
-	print(core.display.tblue+msg+twhite)
+def askQuestion(msg, colour, default_yes = False):
+	print("\n")
+	print(colored(msg, colour), end = "")
 	given = ""
 	valid =  False
 	while not valid:
 		if default_yes:
-			given = input("[Y]es / [N]o, Y/n: \n")
+			given = input(colored(" [Y/n] \n", colour))
 			if not given:
 				given = "y"
 		else:
-			given = input("[Y]es / [N]o: y/N: \n")
+			given = input(colored(" [y/N] \n", colour))
 			if not given:
 				given = "n"
 			
@@ -48,8 +52,23 @@ def askQuestionWithDefault(msg, default_yes = False):
 		elif given.lower() in ["n", "no"]:
 			return False
 		else:
-			print(core.display.tred+"Invalid input. [Y] or [N]\n"+core.display.twhite) 
-            
+			print(colored("Invalid user input. [y/n] only.\n", "red")) 
+    
+def askInput(msg, colour):
+    while True:
+        try:
+            user_input = input(msg + ": ")
+            user_input = str(user_input)
+
+            if user_input and user_input.isalnum():
+                return user_input
+            else:
+                print(colored("Invalid user input.\n", "red"))
+
+        except Exception as e:
+            print(colored(f"An unexpected error occurred: {e}", "red"))
+
+
 def wait():
     config = configparser.ConfigParser()
     config.read("core/cfg/config.ini")

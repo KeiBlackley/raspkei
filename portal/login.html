@@ -20,28 +20,44 @@
   </head>
   <body>
     <header>
-      <h1> RaspkeiAP Portal </h1>
+      <h1> RaspkeiAP </h1>
     </header>
 
-    <div class="apportal">
-      <h2> Access Wifi </h2>
-      <p> Complete below for Wi-Fi Access </p>
+    <div class="hotspot-portal half-columns">
+      <div class="login">
+        <h2> WiFi Portal </h2>
+        <p> Please complete below for Wi-Fi Access </p>
 
-      <form method="GET" action="$authaction">
-        <input type="hidden" name="tok" value="$tok">
-        <input type="hidden" name="redir" value="$redir">
-        
-        <label class="checkbox"> I agree to the <a href="tos.html">Terms & Conditions</a>. <br> Illegal file downloads are prohibited.
-          <input type="checkbox" required />
-          <span class="checkmark"></span>
-        </label>
+        <form method="GET" action="$authaction">
+          <input type="hidden" name="tok" value="$tok">
+          <input type="hidden" name="redir" value="$redir">
+          
+          <label for="hotspot-username">Username:</label>
+          <input id="hotspot-username" type="text" name="username" placeholder="GUEST" />
 
-        <input type="submit" value="Continue" />
-      </form>
+          <label for="hotspot-password">Password:</label>
+          <input id="hotspot-password" type="password" name="password" placeholder="* * * * * * * *" />
+
+          <label class="checkbox"> I agree to the <a href="tos.html">Terms & Conditions</a>. <br> Illegal file downloads are prohibited.
+            <input type="checkbox" required />
+            <span class="checkmark"></span>
+          </label>
+
+          <input type="submit" value="Continue" />
+        </form>
+      </div> <!-- .login -->
+
+      <div class="about">
+        <h2> WiFi Info </h2>
+        <p> Your IP Address [<i>$clientip</i>] is currently being monitored. </p>
+
+        <button onclick="window.location.href='tos.html'"> View Terms of Service </button>
+      </div> <!-- .login -->
     </div> <!-- .container -->
 
     <footer>
-      <p> &copy; Copyright 2025. Raspkei </p>
+      <p class="copyright"> &copy; Copyright 2025. Raspkei </p>
+      <p class="info"> [IP Address] $clientip - [MAC Address] $clientmac - [Upload] $clientupload - [Download] $clientdownload - [Gateway MAC] $gatewaymac - [Clients] $nclients / $maxclients - [Uptime] $uptime </p>
     </footer>
   </body>
 </html>
