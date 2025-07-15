@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="0">
+      <meta charset="UTF-8">
+      <meta name="description" content="Login Portal for Hotspot on Raspkei.">
+      <meta name="author" content="Raspkei, KeiBlackley">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+      <link href="assets/css/global.css" rel="stylesheet" type="text/css" />
+
+      <title> RaspkeiAP - Portal </title>
+
+      <link href="assets/css/portal.css" rel="stylesheet" type="text/css" />
+    </head>
+  </head>
+  <body>
+    <header>
+      <h1> <img class="rpi" src="images/rpi.png" alt="RPi" /> RaspkeiAP </h1>
+    </header>
+
+    <div class="apportal">
+      <h2> Access Wifi </h2>
+      <p> Complete below for Wi-Fi Access </p>
+
+      <form method="GET" action="$authaction">
+        <input type="hidden" name="tok" value="$tok">
+        <input type="hidden" name="redir" value="$redir">
+        
+        <label class="checkbox"> I agree to the <a href="tos.html">Terms & Conditions</a>. <br> Illegal file downloads are prohibited.
+          <input type="checkbox" required />
+          <span class="checkmark"></span>
+        </label>
+
+        <input type="submit" value="Continue" />
+      </form>
+    </div> <!-- .container -->
+
+    <footer>
+      <p> &copy; Copyright 2025. Raspkei </p>
+    </footer>
+  </body>
+</html>

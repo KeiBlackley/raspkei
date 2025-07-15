@@ -1,0 +1,22 @@
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin: 40px auto;
+}
+
+h1, h2 { color: var(--col-rpi-red); }
+
+label.checkbox input:checked ~ .checkmark { background-color: var(--col-grey); border-radius: 8px; }
+label.checkbox .checkmark:after { background-color: var(--col-rpi-red); }
+
+input[type=submit] { background-color: var(--col-rpi-red); }
+input[type=submit]:hover { background-color:var(--col-green); }
+
+.apportal {
+   background-color: white;
+   padding: 8px 24px;
+   border-radius: 16px;
+   width: 50%;
+}
