@@ -31,13 +31,13 @@ body {
 h1, h2, h3, h4 { 
    font-family: "Quicksand", sans-serif; 
    text-transform: uppercase; 
-   margin: 16px;
+   margin: 16px auto;
 }
 
 img { width: 50px; margin: 20px; }
 
 ul { list-style: none; }
-ul li { margin-left: 32px; }
+ul li { margin-left: 16px; }
 
 a, a:visited { color: var(--col-kei-liteblue); text-decoration: none; }
 a:hover { color: var(--col-kei-cyan); transition: 0.5s; }
